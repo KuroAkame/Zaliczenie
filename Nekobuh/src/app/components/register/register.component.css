@@ -1,0 +1,50 @@
+#login{
+  background-color: white;
+}
+.login{
+
+  justify-items: center;
+  display: grid;
+}
+.input{
+  border: #431CC5 3px solid;
+  background-color: white;
+  color: #431CC5;
+  width: 90%;
+  padding: 15px;
+  margin: 10px 0 10px 0;
+}
+.login span{
+  text-align: start!important;
+  margin: 0px 0 10px 10px;
+  color: #431CC5;
+  font-size: 15px;
+}
+.sumbit{
+  border: #431CC5 3px solid;
+  width: 65%;
+  color: #431CC5;
+  background-color: #EFCAEB;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+}
+hr{
+  color: #431CC5;
+  height: 2px;
+  background-color: #431CC5;
+  margin: 10px 30px 0 30px;
+}
+h5{
+  margin: 10px 0 10px 0;
+  color: #431CC5;
+}
+.start{
+  justify-content: start;
+}
+.itemContainerWhite{
+  background-color: #FCF7FD;
+
+}
+#login{
+  margin-bottom: 0!important;
+}
