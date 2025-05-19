@@ -4,6 +4,6 @@ import {ItemComponent} from './components/item/item.component';
 
 export const routes: Routes = [
   {path:'',component:BodyComponent},
-  { path: '**', redirectTo: '', pathMatch: 'full' },
   {path:'item', component:ItemComponent},
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
