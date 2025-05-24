@@ -52,6 +52,10 @@ h1{
   border:#431CC5 3px solid;
   padding: 3px 3px 15px 3px;
   margin-bottom: 30px;
+
+}
+.overflow{
+  overflow:hidden;
 }
 .itemHeader
 {

@@ -2,32 +2,32 @@
   <div class="box ">
     <div class="header">
       <div class="square"></div>
-      <div class="breadCrumb"><span routerLink="/">Nekobuh</span> > Twój Koszyk</div>
+      <div class="breadCrumb"><span routerLink="/**">Nekobuh</span> > Twój Koszyk</div>
     </div>
     <div class="mainBody">
       <div class="mainBody">
         <div class="flex mt20">
-          <div class="itemContainer width60 vh60 overflow" routerLink="/item">
+          <div class="itemContainer width60 vh60 overflow" >
             <div class="itemHeader start">
               <div class="square"></div>
               <h2 class="start m-x10"> Twój Koszyk</h2>
 
 
             </div>
-            <div class="itemContainer mt5 flex vh20 align-center start" id="itemChart">
+            <div *ngFor="let item of cart" class="itemContainer mt5 flex vh20 align-center start" id="itemChart">
               <div class="border m-x10">
                 <i class="fa-solid fa-check"></i>
               </div>
               <img class="m-x10" src="/cutepaws.png" >
               <div class="flex start flex-wrap">
                 <div class="width">
-                  Nazwa Produtku
+                  {{item.name}}
                 </div>
                 <div class="flex align-center">
                   <div class="adder" id="minus"><i class="fa-solid fa-minus"></i></div>
-                  <input type="number" id="itemQuanity" readonly >
+                  <input type="number" id="itemQuanity" readonly [value]="item.quantity" >
                   <div class="adder" id="plus"><i class="fa-solid fa-plus"></i></div>
-                  <span class="m-x10">Cena</span> <span class=""> PLN</span>
+                  <span class="m-x10">Cena</span> <span class=""> {{ item.price*item.quantity }}</span>
                 </div>
 
               </div>
@@ -43,7 +43,7 @@
                 <div class="square"> </div><span class="ps10 describe">Suma Koszyka</span>
               </div>
               <div class="itemContainer mt5 itemDescribe">
-                <h2 class="ps10">18,00 zł</h2>
+                <h2 class="ps10">{{ getTotalPrice() | currency:'PLN':'symbol' }}</h2>
                 <hr class="m-x10 ">
 
                 <div  class="m-x10">Kwota Do Zapłaty</div>

@@ -36,7 +36,7 @@
           Keycapy
         </li>
       </ul>
-      <ul * class="itemContainer ">
+      <ul *ngIf="userAuthenticated" class="itemContainer ">
         <span class="ulText">Profil</span>
         <li routerLink="/koszyk">
           Koszyk
@@ -55,8 +55,11 @@
       <div class="middle">NekoBuh</div>
       <div class="end">
         <input placeholder="Szukaj :3" class="browsing ">
-        <button  class="itemContainer login m-x10 " routerLink="/login">
+        <button *ngIf="!userAuthenticated" class="itemContainer login m-x10 " routerLink="/login">
           Zaloguj sie
+        </button>
+        <button *ngIf="userAuthenticated" class="itemContainer login m-x10 " (click)="logout()">
+          Wyloguj
         </button>
 
       </div>

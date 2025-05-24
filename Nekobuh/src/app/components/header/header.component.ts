@@ -1,17 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, AfterViewInit, OnInit, OnDestroy} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {CommonModule} from '@angular/common';
-
+import {AuthService} from '../../_service/auth.service';
+import {Subscription} from 'rxjs';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-header',
   imports: [RouterLink,CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit,OnDestroy{
+  private autheticationSub!: Subscription;
+  userAuthenticated = false;
+  constructor(private authService:AuthService) {
+  }
+  ngOnDestroy():void{
+    this.autheticationSub.unsubscribe();
+  }
   ngOnInit(): void {
-
-
+    this.autheticationSub = this.authService.getAuthenticatedSub().subscribe(status =>{
+      this.userAuthenticated =status;
+    })
     // Kodzik powoduje wlaczanie navbara
     const hamburger = document.getElementById('hamburger') as HTMLElement;
     const minibar = document.getElementById('minibar') as HTMLElement;
@@ -42,14 +51,14 @@ export class HeaderComponent implements OnInit {
       })
     }
 
+
+
+
+
+
   }
-
-
-
-
-
-
-
-
-
+  logout(){
+    this.authService.logout();
+    console.log('dzieje sie');
+  }
 }

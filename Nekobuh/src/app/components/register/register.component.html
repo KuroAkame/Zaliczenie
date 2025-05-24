@@ -11,7 +11,7 @@
           <h2 class="">Zarejestruj sie</h2>
         </div>
         <div id="login" class="itemContainer">
-          <form class="center login">
+          <form class="center login" (ngSubmit)="onSubmit()" [formGroup]='registerForm'>
             <input class='block input mt'  placeholder="E-mail lub login" formControlName='name'>
             <input type="password" class="block input" placeholder="Hasło" formControlName='password'>
 

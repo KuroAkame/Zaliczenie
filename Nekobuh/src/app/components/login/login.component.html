@@ -11,7 +11,7 @@
           <h2 class="">Zaloguj się</h2>
         </div>
         <div id="login" class="itemContainer" >
-          <form class="center login">
+          <form class="center login" (ngSubmit)="onSubmit()" [formGroup]='loginForm'>
             <input class='block input mt'  placeholder="E-mail lub login" formControlName="name" type="text">
             <input type="password" class="block input" placeholder="Hasło" formControlName="password">
             <div class="width">
@@ -22,7 +22,7 @@
           <hr>
           <div class="center ">
             <h5>Nie masz konta?</h5>
-            <button class="sumbit" routerLink="/registersent">Załóż Konto</button>
+            <button class="sumbit" routerLink="/registerSent">Załóż Konto</button>
           </div>
         </div>
       </div>

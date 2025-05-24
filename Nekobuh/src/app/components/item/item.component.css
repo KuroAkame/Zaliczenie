@@ -175,3 +175,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.adder:hover{
+  background-color:#85F0DF;
+}
+button:hover{
+  color:#85F0DF;
+}
