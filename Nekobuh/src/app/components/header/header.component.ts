@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit,OnDestroy{
         if(minibar){
           minibar.style.visibility = 'visible';
         }else{
-          console.log('guwno i napletek')
+
         }
       })
       document.addEventListener('click',(event:MouseEvent)=>{
