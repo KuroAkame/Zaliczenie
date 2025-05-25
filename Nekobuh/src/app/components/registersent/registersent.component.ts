@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {inject} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -11,6 +11,8 @@ import {AuthService} from '../../_service/auth.service';
   styleUrl: './registersent.component.css'
 })
 export class RegistersentComponent implements OnInit {
+  constructor(private router: Router) {}
+
   registerForm!: FormGroup;
   private authService: AuthService = inject(AuthService);
 
@@ -22,5 +24,6 @@ export class RegistersentComponent implements OnInit {
   }
   onSubmit(){
     this.authService.register(this.registerForm.value.name, this.registerForm.value.password);
+    this.router.navigate(['/login']);
   }
 }
